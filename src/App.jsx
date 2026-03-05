@@ -944,7 +944,7 @@ export default function App() {
         setLiveRegionText(t('loadingImage')); setUserPrompt(prompt); setIsLoading(true); setGenerationStep('image'); setError(null); setGeneratedImage(null); setStory("");
         
         const apiKey = import.meta.env.VITE_GEMINI_API_KEY || ""; // API Key from environment
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${apiKey}`;
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image-preview:generateContent?key=${apiKey}`;
         const base64ImageData = imageSrc.split(',')[1];
         const fullPrompt = t('imagePrompt', { prompt });
         const payload = { contents: [{ parts: [ { text: fullPrompt }, { inlineData: { mimeType: "image/jpeg", data: base64ImageData } } ] }], generationConfig: { responseModalities: ['IMAGE'] }, };
